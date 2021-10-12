@@ -1,0 +1,122 @@
+/* Resets */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic Styling */
+:root {
+  /* Colors */
+  --brightOrange: hsl(31, 77%, 52%);
+  --darkCyan: hsl(184, 100%, 22%);
+  --veryDarkCyan: hsl(179, 100%, 13%);
+  --transparentWhite: hsla(0, 0%, 100%, 0.75);
+  --veryLightGray: hsl(0, 0%, 95%);
+}
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  background: var(--veryLightGray);
+  overflow: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Utilities */
+.btn {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 30px;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  background-color: var(--veryLightGray);
+  transition: background-color 0.5s, border 0.5s, color 0.5s;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--veryLightGray);
+  color: var(--veryLightGray);
+}
+
+/* Main Styling */
+.container {
+  max-width: 335px;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.container > * {
+  padding: 50px;
+  border: none;
+  color: var(--transparentWhite);
+}
+
+.box:nth-child(1) {
+  background: var(--brightOrange);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.box:nth-child(2) {
+  background: var(--darkCyan);
+}
+
+.box:nth-child(3) {
+  background: var(--veryDarkCyan);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.box h2 {
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 2rem;
+  color: var(--veryLightGray);
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.box p {
+  margin-bottom: 10px;
+}
+
+.btn-sedan {
+  color: var(--brightOrange);
+}
+
+.btn-suv {
+  color: var(--darkCyan);
+}
+
+.btn-luxury {
+  color: var(--veryDarkCyan);
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    max-width: 940px;
+    flex-direction: row;
+    margin: 11rem auto;
+  }
+
+  .box:first-child {
+    border-radius: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .box:last-child {
+    border-radius: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
